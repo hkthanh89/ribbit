@@ -5,6 +5,8 @@ RibbitApp::Application.routes.draw do
   resources :ribbits
 
 
+  get 'buddies', to: 'users#buddies', as: 'buddies'
+
   get "sessions/new"
 
   post "sessions/create"
