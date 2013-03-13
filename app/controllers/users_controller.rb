@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def ribbits_like
-    @ribbits = current_user.ribbits_liked
+    @ribbits_like = current_user.ribbits_liked
   end
 
 end

@@ -45,3 +45,9 @@
 		</div>
 	<% end %>
 </div>
+
+<% if current_user %>
+	<div class="panel left">
+		<h1><%= link_to "My ribbits I liked", ribbits_like_user_path(current_user) %></h1>
+	</div>
+<% end %>
