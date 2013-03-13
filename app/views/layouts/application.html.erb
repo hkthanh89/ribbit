@@ -14,6 +14,7 @@
 					<%= link_to "Public Profiles", users_path %>
 					<%= link_to "My Profile", current_user %>
 					<%= link_to "Public Ribbits", ribbits_path %>
+					<%= link_to "My ribbits like", ribbits_like_user_path %>
 					<%= link_to "Log Out", sessions_destroy_path %>
 				<% else %>
 					<%= form_tag sessions_create_path do %>

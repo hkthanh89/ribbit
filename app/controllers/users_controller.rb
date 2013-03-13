@@ -39,4 +39,8 @@ class UsersController < ApplicationController
     end
   end
 
+  def ribbits_like
+    @ribbits = current_user.ribbits_liked
+  end
+
 end

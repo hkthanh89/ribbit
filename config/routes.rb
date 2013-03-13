@@ -3,7 +3,7 @@ RibbitApp::Application.routes.draw do
 
 
   resources :ribbits
-
+  resources :likes, only: [:create, :destroy]
 
   get 'buddies', to: 'users#buddies', as: 'buddies'
 
@@ -13,7 +13,11 @@ RibbitApp::Application.routes.draw do
 
   get "sessions/destroy"
 
-  resources :users
+  resources :users do
+    member do
+      get :ribbits_like
+    end
+  end
 
   root to: 'users#new'
 

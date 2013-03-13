@@ -15,4 +15,8 @@ class RibbitsController < ApplicationController
       redirect_to current_user
     end
   end
+
+  def show
+    @ribbit = Ribbit.find(params[:id])
+  end
 end
