@@ -23,12 +23,20 @@ class RibbitsController < ApplicationController
   def like
     @ribbit =  Ribbit.find(params[:id])
     current_user.like!(@ribbit)
-    redirect_to ribbits_url
+
+    respond_to do |format|
+      format.html { redirect_to ribbits_url }
+      format.js
+    end
   end
 
   def unlike
     @ribbit = Ribbit.find(params[:id])
     current_user.unlike!(@ribbit)
-    redirect_to ribbits_url
+    
+    respond_to do |format|
+      format.html { redirect_to ribbits_url }
+      format.js
+    end
   end
 end

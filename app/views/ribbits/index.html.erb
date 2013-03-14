@@ -22,11 +22,11 @@
 			<span class="time"><%= time_ago_in_words(ribbit.created_at) %></span>
 			<p><%= link_to ribbit.content, ribbit_path(ribbit) %></p>
 			
-			<div id="like_link">
+			<div id="like_links_<%= ribbit.id %>">
 				<% if current_user.like?(ribbit) %>
-					<%= link_to "Unlike", unlike_ribbit_path(ribbit), method: :delete %>
+					<%= link_to "Unlike", unlike_ribbit_path(ribbit), method: :delete, remote: true %>
 				<% else %>
-					<%= link_to "Like", like_ribbit_path(ribbit), method: :post %>
+					<%= link_to "Like", like_ribbit_path(ribbit), method: :post, remote: true %>
 				<% end %>
 			</div>
 		</div>
