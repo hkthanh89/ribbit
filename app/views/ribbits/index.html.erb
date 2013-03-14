@@ -21,13 +21,15 @@
 			@<%= ribbit.user.username %>
 			<span class="time"><%= time_ago_in_words(ribbit.created_at) %></span>
 			<p><%= link_to ribbit.content, ribbit_path(ribbit) %></p>
+			
 			<div id="like_form">
 				<% if current_user.like?(ribbit) %>
-					<%= render 'unlike', ribbit: ribbit %>
+					<%= render :partial => "ribbits/unlike", locals: { ribbit: ribbit } %>
 				<% else %>
-					<%= render 'like', ribbit: ribbit %>
+					<%= render :partial => "ribbits/like", locals: { ribbit: ribbit } %>
 				<% end %>
 			</div>
 		</div>
 	<% end %>
 </div>
+
