@@ -2,7 +2,12 @@ RibbitApp::Application.routes.draw do
   resources :relationships
 
 
-  resources :ribbits
+  resources :ribbits do
+    member do
+      post :like
+      delete :unlike
+    end
+  end
   resources :likes, only: [:create, :destroy]
 
   get 'buddies', to: 'users#buddies', as: 'buddies'

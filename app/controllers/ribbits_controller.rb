@@ -19,4 +19,16 @@ class RibbitsController < ApplicationController
   def show
     @ribbit = Ribbit.find(params[:id])
   end
+
+  def like
+    @ribbit =  Ribbit.find(params[:id])
+    current_user.like!(@ribbit)
+    redirect_to ribbits_url
+  end
+
+  def unlike
+    @ribbit = Ribbit.find(params[:id])
+    current_user.unlike!(@ribbit)
+    redirect_to ribbits_url
+  end
 end

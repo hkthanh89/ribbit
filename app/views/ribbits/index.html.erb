@@ -24,9 +24,9 @@
 			
 			<div id="like_link">
 				<% if current_user.like?(ribbit) %>
-					<%= render "ribbits/unlike" %>
+					<%= link_to "Unlike", unlike_ribbit_path(ribbit), method: :delete %>
 				<% else %>
-					<%= render "ribbits/like" %>
+					<%= link_to "Like", like_ribbit_path(ribbit), method: :post %>
 				<% end %>
 			</div>
 		</div>
