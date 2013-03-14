@@ -22,11 +22,11 @@
 			<span class="time"><%= time_ago_in_words(ribbit.created_at) %></span>
 			<p><%= link_to ribbit.content, ribbit_path(ribbit) %></p>
 			
-			<div id="like_form">
+			<div id="like_link">
 				<% if current_user.like?(ribbit) %>
-					<%= render :partial => "ribbits/unlike", locals: { ribbit: ribbit } %>
+					<%= render "ribbits/unlike" %>
 				<% else %>
-					<%= render :partial => "ribbits/like", locals: { ribbit: ribbit } %>
+					<%= render "ribbits/like" %>
 				<% end %>
 			</div>
 		</div>
