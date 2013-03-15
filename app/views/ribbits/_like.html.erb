@@ -1,5 +1,4 @@
-<%= form_for(current_user.likes.build(ribbit_id: @ribbit.id), 
-																			remote: true) do |f| %>
+<%= form_for(current_user.likes.build(ribbit_id: @ribbit.id)) do |f| %>
 	<div><%= f.hidden_field :ribbit_id %></div>
 	<%= f.submit "Like" %>
 <% end %>
