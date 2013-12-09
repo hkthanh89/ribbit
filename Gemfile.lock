@@ -64,6 +64,7 @@ GEM
       railties
     mime-types (1.25.1)
     multi_json (1.8.2)
+    newrelic_rpm (3.6.7.159)
     pg (0.12.2)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -124,6 +125,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   meta_request
+  newrelic_rpm
   pg (= 0.12.2)
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
